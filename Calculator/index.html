@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            padding: 15px;
+            width: 200px;
+            border: 2px solid rgba(216, 211, 211, 0.636);
+            border-radius: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .display{
+            margin:10px 2px;
+            padding: 2px;
+            height: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid rgb(215, 209, 209);
+            border-radius: 10px;
+            text-align: left;
+        }
+        .calnumbers{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3px;
+        }
+        .btn{
+            width: 50px;
+            height: 35px;
+            border: 1px solid  rgb(215, 209, 209);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calculator</h1>
+        <div class="container">
+            <input type="text" class="display" readonly>
+            <section class="calnumbers">
+                <button id="c" class="btn n" onclick="result='';  display.value=result;">C</button>
+                <button id="1" class="btn n" onclick="result+='1'; display.value=result;">1</button>
+                <button id="2" class="btn n" onclick="result+='2'; display.value=result;">2</button>
+                <button id="+" class="btn" onclick="result+='+'; display.value=result;">+</button>
+                <button id="3" class="btn n" onclick="result+='3'; display.value=result;">3</button>
+                <button id="4" class="btn n" onclick="result+='4'; display.value=result;">4</button>
+                <button id="-" class="btn" onclick="result+='-'; display.value=result;">-</button>
+                <button id="5" class="btn n" onclick="result+='5'; display.value=result;">5</button>
+                <button id="6" class="btn n" onclick="result+='6'; display.value=result;">6</button>
+                <button id="*" class="btn" onclick="result+='*'; display.value=result;">*</button>
+                <button id="7" class="btn n" onclick="result+='7'; display.value=result;">7</button>
+                <button id="8" class="btn n" onclick="result+='8'; display.value=result;">8</button>
+                <button id="/" class="btn" onclick="result+='/'; display.value=result;">/</button>
+                <button id="9" class="btn n" onclick="result+='9'; display.value=result;">9</button>
+                <button id="0" class="btn n" onclick="result+='0'; display.value=result;">0</button>
+                <button id="=" class="btn" onclick="result=eval(result);  display.value=eval(result);">=</button>
+                <button id="." class="btn" onclick="result+='.'; display.value=result;">.</button>
+            </section>
+        </div>
+    </main>
+    <script>
+        const display= document.getElementsByClassName('display')[0];
+        let result='';
+       display.value=result;
+    </script>
+</body>
+</html>
